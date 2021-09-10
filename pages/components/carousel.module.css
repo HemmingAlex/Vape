@@ -1,0 +1,72 @@
+.carousel {
+
+    max-width:900px;
+    background-color:#07223F;
+    color:white;
+    height:393px;
+    margin:0 auto;
+
+}
+.title, .description{
+    padding:10px;
+    display:flex;
+    justify-content:center;
+    margin:0 auto;
+}
+.description {
+    font-style: 20px;
+    margin:10px;
+}
+.left {
+    max-width:45%;    
+    font-size: 40px;
+    position:relative;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+}
+
+.left:after {
+    position:absolute;
+    bottom:50%;
+    right:50%;
+    content:"Join an Armada";
+    height: 170px;
+    width: 170px;;
+    border-radius: 50%;    
+    border: 8px solid orange;
+    display: inline-block;
+}
+.circle {
+    color:white;
+    height:100px;
+    width:100px;
+    border-radius: 50%;
+    background-color: blue;
+    border: 8px solid orange;
+}
+.Ocircle {
+    content:"";
+    height:400px;
+    width:400px;
+    border-radius: 50%;
+    background-color: white;    border: 8px solid orange;
+
+}
+.Wcircle {
+    content:"";
+    height:300px;
+    width:300px;
+    border-radius: 50%;
+    background-color: white;    border: 8px solid orange;
+
+}
+
+.right {
+    max-width: 60%;
+    font-size: 40px;
+    z-index: 20;
+    background: red !important;
+
+}
