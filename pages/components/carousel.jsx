@@ -10,9 +10,9 @@ function Carousel() {
     })
 
     //position is the movment and placement of all cards in an array
-    const [position, setPosition] = useState([        { direction: "toRight" },
-    { direction: "initialCenter" },
-    { direction: "toLeft" },])
+    const [position, setPosition] = useState([        { direction: "toRight",reverse:"noAnimation" },
+    { direction: "initialCenter", reverse:"noAnimation" },
+    { direction: "toLeft",reverse:"noAnimation" },])
 
     // this is a holding place to manage state
     let store = [];
@@ -58,20 +58,6 @@ function Carousel() {
             }
             setPosition([...store])
         } else {
-            //stopping animations from triggering on load
-            // setPosition([
-            //     { direction: "toLeft", reverse: "noAnimation" },
-            //     {
-            //         direction: "initialCenter",
-            //         reverse: "noAnimation",
-            //     },
-            //     { direction: "toRight", reverse: "noAnimation" },
-            // ]);
-            // // store[controller.active - 1] = {
-            // //     direction: controller.direction,
-            // //     reverse: "toOuter",
-            // // }
-            // // setPosition(store);
         }
     }, [controller.active])
 
