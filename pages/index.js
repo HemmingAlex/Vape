@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import NavBar from "./components/NavBar";
+import NavBar from "../components/NavBar";
 // import backgroundImage from "'../public/Header_Home_Desktop.JPG"
-import Carousel from "./components/Carousel";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   return (
