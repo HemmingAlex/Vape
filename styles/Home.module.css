@@ -4,8 +4,8 @@
   flex-direction: column;
   justify-content: center;
   background-image: url("/Header_Home_Desktop.jpg");
-background-size: cover; /* Resize the background image to cover the entire container */
-
+  background-size: contain; /* Resize the background image to cover the entire container */
+  background-repeat: no-repeat;
 }
 .lefty{
 padding-left:70px;
@@ -167,6 +167,7 @@ opacity:0.1;
   height: 1em;
   margin-left: 0.5rem;
 }
+
 
 @media (max-width: 600px) {
   .grid {
