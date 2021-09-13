@@ -92,6 +92,7 @@
     animation-direction: forwards;
     transform: scale(0.6);
     z-index: 0;
+    opacity:0.6;
 }
 
 .initialCenter {
