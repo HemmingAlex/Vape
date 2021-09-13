@@ -44,27 +44,31 @@
 /* //carousel effect */
 
 @keyframes right {
-    from { color:red; left:150px; }
-  to { color:green; left:0px;}
+    from { color:red; left:300px;
+        transform:scale(0.6) }
+  to { color:green; left:0px;
+    transform:scale(1)}
   }
   
   @keyframes left {
-    from { color:red; left:-150px; }
-  to { color:green; left:0px;}
+    from { color:red; left:-300px;
+        transform:scale(0.6) }
+  to { color:green; left:0px;
+    transform:scale(1)}
   }
-  
+
 .moveLeft {
     position:absolute;
-    width:150px;
-  left:-150px;
+    width:600px;
+  left:-300px;
   animation: left 3s;
   color:turquoise;
   }
 
 .moveRight {
     position:absolute;
-    width:150px;
-  left:150px;
+    width:600px;
+  left:300px;
   animation: right 3s;
   color:gray;
   }
@@ -72,27 +76,30 @@
   animation-direction: forwards;
   left:0px ;
   background-color:orange;
+  z-index: 1;
   }
   .moveOuter {
     animation-direction: reverse;
     background-color:pink;
+    transform:scale(0.6);
+    z-index: 0;
   }
   
   .initialCenter {
     position:absolute;
-    width:150px;
+    width:600px;
   left:0px;
   color:red;
   }
   .initialRight {
     color:purple;
     position:absolute;
-    width:150px;
-  left:150px;
+    width:600px;
+  left:300px;
   }
   .initialLeft {
   color:green;
     position:absolute;
-    width:150px;
-  left:-150px;
+    width:600px;
+  left:-300px;
   }
