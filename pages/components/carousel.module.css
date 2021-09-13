@@ -44,23 +44,23 @@
 /* //carousel effect */
 
 @keyframes toLeft {
-    from { color:red; left:0px;
+    from { color:red; left:-300px;
         transform:scale(1) }
-  to { color:green; left:-300px;
+  to { color:green; left:-600px;
     transform:scale(0.6) }
   }
   
   @keyframes toRight {
-    from { color:red; left:0px;
+    from { color:red; left:-300px;
         transform:scale(1) }
-  to { color:green; left:300px;
+  to { color:green; left:0px;
     transform:scale(0.6)}
   }
 
 .toRight {
     position:absolute;
     width:600px;
-  left:300px;
+  left:0px;
   transform:scale(0.6);
   animation: toRight 0.75s;
   color:turquoise;
@@ -69,21 +69,20 @@
 .toLeft {
     position:absolute;
     width:600px;
-  left:-300px;
+  left:-600px;
   transform:scale(0.6);
   animation: toLeft 0.75s;
   color:gray;
   }
   .toCenter {
     animation-direction: reverse;
-  left:0px !important;
+  left:-300px;
   background-color:orange;
   transform:scale(1);
   z-index: 1;
   }
   .toOuter {
     animation-direction: forwards;
-
     background-color:pink;
     transform:scale(0.6);
     z-index: 0;
@@ -92,7 +91,7 @@
   .initialCenter {
     position:absolute;
     width:600px;
-  left:0px;
+  left:-300px;
   color:red;
   z-index: 1;
   }

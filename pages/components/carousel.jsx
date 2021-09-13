@@ -30,7 +30,7 @@ function Carousel() {
             // the previously active card moves in the same direction
             // as the active one
             store[controller.active + 1] = {
-                direction: controller.direction,
+                direction: "toLeft",
                 //active card always in the center
 
                 reverse: "toOuter",
@@ -52,7 +52,7 @@ function Carousel() {
             // the previously active card moves in the same direction
             //as the active one but in the reverse style of the left movment
             store[controller.active - 1] = {
-                direction: controller.direction,
+                direction: "toRight",
                 //non active card always on the outside.
                 reverse: "toOuter",
             }
@@ -62,9 +62,9 @@ function Carousel() {
     }, [controller.active])
 
     return (
-        <div>
-            {position.length}{" "}
-            {controller.active !== 0 && (
+        <div>        
+           
+             {controller.active !== 0 && (
                 <button
                     onClick={() => {
                         //clicking left makes the left card activateed (move right)
@@ -81,7 +81,7 @@ function Carousel() {
                     left
                 </button>
             )}
-            {controller.active !== 2 && (
+             {controller.active !== 2 && (
                 <button
                     onClick={() => {
                         setController((controller) => {
@@ -121,6 +121,7 @@ function Carousel() {
                 <br />
                 <br />
                 <br />
+               
             </div>
         </div>
     )
