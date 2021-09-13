@@ -53,7 +53,7 @@
   to { color:green; left:0px;}
   }
   
-.moveeft {
+.moveLeft {
     position:absolute;
     width:150px;
   left:-150px;

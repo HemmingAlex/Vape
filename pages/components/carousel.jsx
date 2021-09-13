@@ -3,11 +3,13 @@ import styles from "./carousel.module.css"
 import Circle from "./circles/Circle"
 
 function Carousel() {
-
     const [active, setActive] = useState(1)
-    const [position, setPosition] = useState([styles["initialLeft"], styles["initialCenter"],
-    styles["initialRight"]]);
-    const [direction, setDirection] = useState("none");
+    const [position, setPosition] = useState([
+        styles["initialLeft"],
+        styles["initialCenter"],
+        styles["initialRight"],
+    ])
+    const [direction, setDirection] = useState("none")
 
     let place = [
         styles["initialLeft"],
@@ -16,89 +18,119 @@ function Carousel() {
     ]
 
     useEffect(() => {
-        if (direction === "left") {
-          place = position;
-            place[active - 1] = `${styles[direction]} ${styles["moveOuter"]}`
-            place[active] = `${styles[direction]} ${styles["moveCcenter"]}`
-          setPosition(place);
-        } else if (direction === "right") {
-          place = position;
-          place[active + 1] = `${styles[direction]} ${styles["moveOuter"]}`
-          place[active] = `${styles[direction]} ${styles["moveCenter"]}`
-          setPosition(place);
+        if (direction === "moveLeft") {
+            place = position
+            place[active + 1] = { direction: direction, active: "moveOuter" }
+            place[active] = { direction: direction, active: "moveCenter" }
+            setPosition(place)
+        } else if (direction === "moveRight") {
+            place = position
+            place[active - 1] = { direction: direction, active: "moveOuter" }
+            place[active] = { direction: direction, active: "moveCenter" }
+            setPosition(place)
         } else {
-          setPosition([
-            styles["initialLeft"],
-            styles["initialCenter"],
-            styles["initialRight"],
-          ])
+            setPosition([
+                { direction: "initialLeft", active: "moveCenter" },
+                {
+                    direction: "initialCenter",
+                    active: "moveCenter",
+                },
+                { direction: "initialRight", active: "moveCenter" },
+            ])
         }
     }, [active])
+
     return (
-        <div>                {position.map((input, index) => (
-            <div key={index}  classname={input}>
-{input}
-                <div className={styles.carousel}>
-                    <h1 className={styles.title}>Create. SUBMIT. Earn!</h1>
+        <div style={{ position: "relative", display:"flex", justifyContent:"center" }}>
+            {" "}
+            {active !== 0 && (
+                <button
+                    onClick={() => {
+                        setDirection("moveLeft")
+                        setActive(active - 1)
+                    }}
+                >
+                    left
+                </button>
+            )}
+            {active !== 2 && (
+                <button
+                    onClick={() => {
+                        setDirection("moveRight")
+                        setActive(active + 1)
+                    }}
+                >
+                    right
+                </button>
+            )}{" "}
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            {position.map((input, index) => (
+                <div
+                    key={index}
+                    className={`${styles[input.direction]} ${
+                        styles[input.active]
+                    }`}
+                >
+ 
+                    <div className={styles.carousel}>
+                        <h1 className={styles.title}>Create. SUBMIT. Earn!</h1>
 
-                    <div className={styles.description}>
-                        Tap into the power of your creative customers for
-                        branded content and authentic word-of-mouth influencer
-                        marketing.
-                    </div>
-                    <div
-                        style={{
-                            display: "flex",
-                            flexWrap: "wrap",
-                            padding: "0px 50px",
-                        }}
-                    >
-                        <div className={styles.left}>
-                            <Circle icon={<div style={{maxWidth:"100px"}}><h1>
-                                        JOIN AN ARMADA
-                                    </h1>
-                                    Unified by social content creation!
-
-                                    </div>} />
+                        <div className={styles.description}>
+                            Tap into the power of your creative customers for
+                            branded content and authentic word-of-mouth
+                            influencer marketing.
                         </div>
+                        <div
+                            style={{
+                                display: "flex",
+                                flexWrap: "wrap",
+                                padding: "0px 50px",
+                            }}
+                        >
+                            <div className={styles.left}>
+                                <Circle
+                                    icon={
+                                        <div style={{ maxWidth: "100px" }}>
+                                            <h1>JOIN AN ARMADA</h1>
+                                            Unified by social content creation!
+                                        </div>
+                                    }
+                                />
+                            </div>
 
-                        <div className={styles.right}>
-                            <Circle
-                                icon={<h1>£££</h1>}
-                                info={
-                                    <div>
-                                        £1000’s earned by creators every day!
-                                    </div>
-                                }
-                            />
-                            <Circle
-                                icon={<h1>200+</h1>}
-                                info={
-                                    <div style={{ color: "white" }}>
-                                        Campaigns available to make you money!
-                                    </div>
-                                }
-                            />
+                            <div className={styles.right}>
+                                <Circle
+                                    icon={<h1>£££</h1>}
+                                    info={
+                                        <div>
+                                            £1000’s earned by creators every
+                                            day!
+                                        </div>
+                                    }
+                                />
+                                <Circle
+                                    icon={<h1>200+</h1>}
+                                    info={
+                                        <div style={{ color: "white" }}>
+                                            Campaigns available to make you
+                                            money!
+                                        </div>
+                                    }
+                                />
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>))}
-            
+                </div>
+            ))}
             <br />
             <br />
             <br />
-{active !== 0 &&
-<button onClick={()=>{
-setDirection("left");
-setActive(active-1);
-            }}>left</button>
-}            
 
-{ active !== 2 &&           <button onClick={()=>{
-                setDirection("right"); setActive(active+1);
-
-            }}>right</button>
-}        </div>
+        </div>
     )
 }
 
