@@ -1,23 +1,38 @@
-import React from 'react'
-import styles from './Navbar.module.css'
-import Link from "next/link"
-import Image from 'next/image'
+import React from "react";
+import styles from "./Navbar.module.css";
+import Link from "next/link";
 
 function Navbar() {
-    return (<nav className={styles.container}>
-                    <Image src="/Logo-blue.svg" className={styles.logo} alt="vape Logo" width={500} height={50} />
-                    <i className="fa fa-bars"></i>
-                    <i className="fa fa-bars"></i>
- <div className={styles.navbar}>???
-<Link href="/about">Abotu Us</Link>
-<Link href="/about">Creators</Link>
-<Link href="/about">How It Works</Link>
-<Link href="/about">Learn More</Link>
-<Link href="/about">Login</Link>
-<button className={styles.button}>Start Learning today</button>
+  return (
+    <nav className={styles.container}>
+      <img
+        src="/Logo-blue.svg"
+        width={500}
+        height={50}
+        className={styles.logo}
+      />
+      <img
+        src="/Logo.svg"
+        width={250}
+        height={25}
+        className={styles.whiteLogo}
+      />
+      <img
+        src="/bars-solid.svg"
+        className={styles.bars}
+        width={20}
+        height={20}
+      />
+      <div className={styles.navbar}>
+        <Link href="/about">Abotu Us</Link>
+        <Link href="/about">Creators</Link>
+        <Link href="/about">How It Works</Link>
+        <Link href="/about">Learn More</Link>
+        <Link href="/about">Login</Link>
+        <button className={styles.button}>Start Learning today</button>
       </div>
-      </nav>
-    )
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
