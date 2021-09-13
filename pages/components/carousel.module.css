@@ -1,72 +1,98 @@
 .carousel {
-
-    max-width:900px;
-    background-color:#07223F;
-    color:white;
-    height:393px;
-    margin:0 auto;
-
+    max-width: 900px;
+    background-color: #07223f;
+    color: white;
+    height: 393px;
+    margin: 30px auto;
 }
-.title, .description{
-    padding:10px;
-    display:flex;
-    justify-content:center;
-    margin:0 auto;
+
+.title,
+.description {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
+
 .description {
     font-style: 20px;
-    margin:10px;
+    text-align: center;
+    margin: 10px;
 }
+
 .left {
-    max-width:45%;    
-    font-size: 40px;
-    position:relative;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    height:100%;
-}
-
-.left:after {
-    position:absolute;
-    bottom:50%;
-    right:50%;
-    content:"Join an Armada";
-    height: 170px;
-    width: 170px;;
-    border-radius: 50%;    
-    border: 8px solid orange;
-    display: inline-block;
-}
-.circle {
-    color:white;
-    height:100px;
-    width:100px;
-    border-radius: 50%;
-    background-color: blue;
-    border: 8px solid orange;
-}
-.Ocircle {
-    content:"";
-    height:400px;
-    width:400px;
-    border-radius: 50%;
-    background-color: white;    border: 8px solid orange;
-
-}
-.Wcircle {
-    content:"";
-    height:300px;
-    width:300px;
-    border-radius: 50%;
-    background-color: white;    border: 8px solid orange;
-
+    max-width: 45%;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
 }
 
 .right {
-    max-width: 60%;
-    font-size: 40px;
+    width: 50%;
+    /* position:relative; */
     z-index: 20;
-    background: red !important;
-
 }
+
+.modelInfo {
+    font-size: 10px;
+    display:flex;
+}
+
+
+
+/* //carousel effect */
+
+@keyframes right {
+    from { color:red; left:150px; }
+  to { color:green; left:0px;}
+  }
+  
+  @keyframes left {
+    from { color:red; left:-150px; }
+  to { color:green; left:0px;}
+  }
+  
+.moveeft {
+    position:absolute;
+    width:150px;
+  left:-150px;
+  animation: left 3s;
+  color:turquoise;
+  }
+
+.moveRight {
+    position:absolute;
+    width:150px;
+  left:150px;
+  animation: right 3s;
+  color:gray;
+  }
+  .moveCenter {
+  animation-direction: forwards;
+  left:0px ;
+  background-color:orange;
+  }
+  .moveOuter {
+    animation-direction: reverse;
+    background-color:pink;
+  }
+  
+  .initialCenter {
+    position:absolute;
+    width:150px;
+  left:0px;
+  color:red;
+  }
+  .initialRight {
+    color:purple;
+    position:absolute;
+    width:150px;
+  left:150px;
+  }
+  .initialLeft {
+  color:green;
+    position:absolute;
+    width:150px;
+  left:-150px;
+  }
