@@ -62,7 +62,7 @@ function Carousel() {
     }, [controller.active])
 
     return (
-        <div>        
+        <div className={styles.container}>        
            
              {controller.active !== 0 && (
                 <button

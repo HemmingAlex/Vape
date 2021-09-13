@@ -10,8 +10,9 @@ function Info() {
         <div>
               <div className={styles.carousel}>
                             <h1 className={styles.title}>
-                            Create
-                            <div className={styles.orange}>.{" "}</div> SUBMIT<div className={styles.orange}>.{" "}</div> Earn<div className={styles.orange}>!</div> 
+                            CREATE
+                            <div className={styles.orange}>.&nbsp;</div> SUBMIT<div className={styles.orange}>.                    &nbsp;</div>
+                              EARN<div className={styles.orange}>                    &nbsp;!</div> 
                             </h1>
                             <h1></h1>
                             <div className={styles.description}>

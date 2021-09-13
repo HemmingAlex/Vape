@@ -13,6 +13,7 @@
 
 .title,
 .description {
+    font-family:"Bebas Neue";
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -108,4 +109,129 @@
 
 .noAnimation {
     animation: none;
+}
+@media (max-width: 800px) {
+    /* .container {
+       display:none;
+
+    } */
+    .carousel {
+        max-width: 334px;
+        background-color: #07223f;
+        color: white;
+        height: 393px;
+        margin: 5px auto;
+    }
+
+    .orange {
+        display:inline;
+        color:#FF6200;
+    }
+    
+    .title,
+    .description {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .title {
+        font-size: 27px;
+    }
+
+    .description {
+        font-style: 14px;
+        text-align: center;
+        margin: 2px;
+    }
+    
+    .left {
+        max-width: 45%;
+        font-size: 8px;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+    }
+    
+    .right {
+        width: 50%;
+        z-index: 2;
+    }
+    
+
+    .modelInfo {
+        font-size: 12px;
+        margin:0;
+        display: flex;
+    }
+    
+    /* //carousel effect */
+    
+    @keyframes toLeft {
+        from {
+            left: -150px;
+            transform: scale(1);
+        }
+        to {
+            left: -200px;
+            transform: scale(0.9);
+        }
+    }
+    
+    @keyframes toRight {
+        from {
+            left: -150px;
+            transform: scale(1);
+        }
+        to {
+            left: -100px;
+            transform: scale(0.9);
+        }
+    }
+    
+    .toRight {
+        position: absolute;
+        width: 334px;
+        left: -100px;
+        transform: scale(0.9);
+        animation: toRight 0.75s;
+        opacity:0.6;
+    
+    }
+    
+    .toLeft {
+        position: absolute;
+        width: 334px;
+        left: -200px;
+        transform: scale(0.9);
+        animation: toLeft 0.75s;
+        opacity:0.6;
+    
+    }
+    .toCenter {
+        animation-direction: reverse;
+        left: -150px;
+        transform: scale(1);opacity:1;
+        z-index: 1;
+    }
+    .toOuter {
+        animation-direction: forwards;
+        transform: scale(0.9);
+        z-index: 0;
+        opacity:0.6;
+    }
+    
+    .initialCenter {
+        position: absolute;
+        width: 334px;
+        left: -150px;
+        z-index: 1;opacity:1;
+    }
+    
+    .noAnimation {
+        animation: none;
+    }
+    .container {
+        margin:0px;
+    }
 }
