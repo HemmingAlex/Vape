@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./carousel.module.css";
-import Circle from "./circles/Circle";
-import OrnageCircle from "./circles/OrangeCircle";
-import WhiteCircle from "./circles/WhiteCircle";
+import Circle from "./circles/Circle.jsx";
+import OrnageCircle from "./circles/OrangeCircle.jsx";
+import WhiteCircle from "./circles/WhiteCircle.jsx";
 
 function Info() {
   return (
