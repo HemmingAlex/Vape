@@ -43,43 +43,47 @@
 
 /* //carousel effect */
 
-@keyframes right {
-    from { color:red; left:300px;
-        transform:scale(0.6) }
-  to { color:green; left:0px;
-    transform:scale(1)}
+@keyframes toLeft {
+    from { color:red; left:0px;
+        transform:scale(1) }
+  to { color:green; left:-300px;
+    transform:scale(0.6) }
   }
   
-  @keyframes left {
-    from { color:red; left:-300px;
-        transform:scale(0.6) }
-  to { color:green; left:0px;
-    transform:scale(1)}
+  @keyframes toRight {
+    from { color:red; left:0px;
+        transform:scale(1) }
+  to { color:green; left:300px;
+    transform:scale(0.6)}
   }
 
-.moveLeft {
-    position:absolute;
-    width:600px;
-  left:-300px;
-  animation: left 3s;
-  color:turquoise;
-  }
-
-.moveRight {
+.toRight {
     position:absolute;
     width:600px;
   left:300px;
-  animation: right 3s;
+  transform:scale(0.6);
+  animation: toRight 0.75s;
+  color:turquoise;
+  }
+
+.toLeft {
+    position:absolute;
+    width:600px;
+  left:-300px;
+  transform:scale(0.6);
+  animation: toLeft 0.75s;
   color:gray;
   }
-  .moveCenter {
-  animation-direction: forwards;
-  left:0px ;
+  .toCenter {
+    animation-direction: reverse;
+  left:0px !important;
   background-color:orange;
+  transform:scale(1);
   z-index: 1;
   }
-  .moveOuter {
-    animation-direction: reverse;
+  .toOuter {
+    animation-direction: forwards;
+
     background-color:pink;
     transform:scale(0.6);
     z-index: 0;
@@ -90,16 +94,25 @@
     width:600px;
   left:0px;
   color:red;
+  z-index: 1;
   }
-  .initialRight {
+  /* .initialRight {
     color:purple;
     position:absolute;
     width:600px;
   left:300px;
+  transform:scale(0.6);
+  z-index: 0;
   }
   .initialLeft {
   color:green;
     position:absolute;
     width:600px;
   left:-300px;
-  }
+  transform:scale(0.6);
+  z-index: 0;
+  } */
+
+  .noAnimation{
+    animation:none;
+}

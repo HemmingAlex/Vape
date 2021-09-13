@@ -1,135 +1,141 @@
 import React, { useState, useEffect } from "react"
 import styles from "./carousel.module.css"
-import Circle from "./circles/Circle"
+import Info from "./Info.jsx"
 
 function Carousel() {
-    const [active, setActive] = useState(1)
-    const [position, setPosition] = useState([
-        styles["initialLeft"],
-        styles["initialCenter"],
-        styles["initialRight"],
-    ])
-    const [direction, setDirection] = useState("none")
+    //controller is the active (center) card
+    const [controller, setController] = useState({
+        active: 1,
+        direction: "none",
+    })
 
-    let place = [
-        styles["initialLeft"],
-        styles["initialCenter"],
-        styles["initialRight"],
-    ]
+    //position is the movment and placement of all cards in an array
+    const [position, setPosition] = useState([        { direction: "toRight" },
+    { direction: "initialCenter" },
+    { direction: "toLeft" },])
 
+    // this is a holding place to manage state
+    let store = [];
+    
     useEffect(() => {
-        if (direction === "moveLeft") {
-            place = position
-            place[active + 1] = { direction: direction, active: "moveOuter" }
-            place[active] = { direction: direction, active: "moveCenter" }
-            setPosition(place)
-        } else if (direction === "moveRight") {
-            place = position
-            place[active - 1] = { direction: direction, active: "moveOuter" }
-            place[active] = { direction: direction, active: "moveCenter" }
-            setPosition(place)
+        if (controller.direction === "toRight") {
+            store = position
+            //the active card moved to the right
+
+            store[controller.active] = {
+                direction: controller.direction,
+                //none active card always moved outer
+                reverse: "toCenter",
+            }
+            // the previously active card moves in the same direction
+            // as the active one
+            store[controller.active + 1] = {
+                direction: controller.direction,
+                //active card always in the center
+
+                reverse: "toOuter",
+            }
+
+            setPosition([...store])
+        } else if (controller.direction == "toLeft") {
+            if (controller.active == 2) {
+                console.log("max right")
+            }
+
+            //the active card moved to the left
+            store = position
+            store[controller.active] = {
+                direction: controller.direction,
+                //active card always in the center
+                reverse: "toCenter",
+            }
+            // the previously active card moves in the same direction
+            //as the active one but in the reverse style of the left movment
+            store[controller.active - 1] = {
+                direction: controller.direction,
+                //non active card always on the outside.
+                reverse: "toOuter",
+            }
+            setPosition([...store])
         } else {
-            setPosition([
-                { direction: "initialLeft", active: "moveCenter" },
-                {
-                    direction: "initialCenter",
-                    active: "moveCenter",
-                },
-                { direction: "initialRight", active: "moveCenter" },
-            ])
+            //stopping animations from triggering on load
+            // setPosition([
+            //     { direction: "toLeft", reverse: "noAnimation" },
+            //     {
+            //         direction: "initialCenter",
+            //         reverse: "noAnimation",
+            //     },
+            //     { direction: "toRight", reverse: "noAnimation" },
+            // ]);
+            // // store[controller.active - 1] = {
+            // //     direction: controller.direction,
+            // //     reverse: "toOuter",
+            // // }
+            // // setPosition(store);
         }
-    }, [active])
+    }, [controller.active])
 
     return (
-        <div style={{ position: "relative", display:"flex", justifyContent:"center" }}>
-            {" "}
-            {active !== 0 && (
+        <div>
+            {position.length}{" "}
+            {controller.active !== 0 && (
                 <button
                     onClick={() => {
-                        setDirection("moveLeft")
-                        setActive(active - 1)
+                        //clicking left makes the left card activateed (move right)
+                        //and the previously active card move right
+                        //hence all cards move right
+                        setController((controller) => {
+                            return {
+                                active: controller.active - 1,
+                                direction: "toRight",
+                            }
+                        })
                     }}
                 >
                     left
                 </button>
             )}
-            {active !== 2 && (
+            {controller.active !== 2 && (
                 <button
                     onClick={() => {
-                        setDirection("moveRight")
-                        setActive(active + 1)
+                        setController((controller) => {
+                            return {
+                                active: controller.active + 1,
+                                direction: "toLeft",
+                            }
+                        })
                     }}
                 >
                     right
                 </button>
             )}{" "}
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            {position.map((input, index) => (
-                <div
-                    key={index}
-                    className={`${styles[input.direction]} ${
-                        styles[input.active]
-                    }`}
-                >
- 
-                    <div className={styles.carousel}>
-                        <h1 className={styles.title}>Create. SUBMIT. Earn!</h1>
-
-                        <div className={styles.description}>
-                            Tap into the power of your creative customers for
-                            branded content and authentic word-of-mouth
-                            influencer marketing.
-                        </div>
-                        <div
-                            style={{
-                                display: "flex",
-                                flexWrap: "wrap",
-                                padding: "0px 50px",
-                            }}
-                        >
-                            <div className={styles.left}>
-                                <Circle
-                                    icon={
-                                        <div style={{ maxWidth: "100px" }}>
-                                            <h1>JOIN AN ARMADA</h1>
-                                            Unified by social content creation!
-                                        </div>
-                                    }
-                                />
-                            </div>
-
-                            <div className={styles.right}>
-                                <Circle
-                                    icon={<h1>£££</h1>}
-                                    info={
-                                        <div>
-                                            £1000’s earned by creators every
-                                            day!
-                                        </div>
-                                    }
-                                />
-                                <Circle
-                                    icon={<h1>200+</h1>}
-                                    info={
-                                        <div style={{ color: "white" }}>
-                                            Campaigns available to make you
-                                            money!
-                                        </div>
-                                    }
-                                />
-                            </div>
-                        </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />{" "}
+            <div
+                style={{
+                    position: "relative",
+                    display: "flex",
+                    justifyContent: "center",
+                }}
+            >
+                {position.map((input, index) => (
+                    <div
+                        key={index}
+                        className={`${styles[input.direction]} ${
+                            styles[input.reverse]
+                        }`}
+                    >
+                        {controller.active}
+                        <Info />
                     </div>
-                </div>
-            ))}
-            <br />
-            <br />
-            <br />
-
+                ))}
+                <br />
+                <br />
+                <br />
+            </div>
         </div>
     )
 }
