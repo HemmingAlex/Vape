@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from "./carousel.module.css"
 import Circle from "./circles/Circle"
+import OrnageCircle from "./circles/OrangeCircle"
+import WhiteCircle from "./circles/WhiteCircle"
 
 
 function Info() {
@@ -8,7 +10,8 @@ function Info() {
         <div>
               <div className={styles.carousel}>
                             <h1 className={styles.title}>
-                            Create. SUBMIT. Earn!
+                            Create
+                            <div className={styles.orange}>.{" "}</div> SUBMIT<div className={styles.orange}>.{" "}</div> Earn<div className={styles.orange}>!</div> 
                             </h1>
                             <h1></h1>
                             <div className={styles.description}>
@@ -36,7 +39,7 @@ function Info() {
                                 </div>
 
                                 <div className={styles.right}>
-                                    <Circle
+                                    <OrnageCircle
                                         icon={<h1>£££</h1>}
                                         info={
                                             <div>
@@ -45,7 +48,7 @@ function Info() {
                                             </div>
                                         }
                                     />
-                                    <Circle
+                                    <WhiteCircle
                                         icon={<h1>200+</h1>}
                                         info={
                                             <div style={{ color: "white" }}>

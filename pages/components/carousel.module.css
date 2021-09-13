@@ -1,9 +1,14 @@
 .carousel {
-    max-width: 900px;
+    max-width: 800px;
     background-color: #07223f;
     color: white;
     height: 393px;
     margin: 30px auto;
+}
+
+.orange {
+    display:inline;
+    color:#FF6200;
 }
 
 .title,
@@ -30,88 +35,72 @@
 
 .right {
     width: 50%;
-    /* position:relative; */
     z-index: 20;
 }
 
 .modelInfo {
     font-size: 10px;
-    display:flex;
+    display: flex;
 }
-
-
 
 /* //carousel effect */
 
 @keyframes toLeft {
-    from { color:red; left:-300px;
-        transform:scale(1) }
-  to { color:green; left:-600px;
-    transform:scale(0.6) }
-  }
-  
-  @keyframes toRight {
-    from { color:red; left:-300px;
-        transform:scale(1) }
-  to { color:green; left:0px;
-    transform:scale(0.6)}
-  }
+    from {
+        left: -400px;
+        transform: scale(1);
+    }
+    to {
+        left: -800px;
+        transform: scale(0.6);
+    }
+}
+
+@keyframes toRight {
+    from {
+        left: -400px;
+        transform: scale(1);
+    }
+    to {
+        left: 0px;
+        transform: scale(0.6);
+    }
+}
 
 .toRight {
-    position:absolute;
-    width:600px;
-  left:0px;
-  transform:scale(0.6);
-  animation: toRight 0.75s;
-  color:turquoise;
-  }
+    position: absolute;
+    width: 800px;
+    left: 0px;
+    transform: scale(0.6);
+    animation: toRight 0.75s;
+}
 
 .toLeft {
-    position:absolute;
-    width:600px;
-  left:-600px;
-  transform:scale(0.6);
-  animation: toLeft 0.75s;
-  color:gray;
-  }
-  .toCenter {
+    position: absolute;
+    width: 800px;
+    left: -800px;
+    transform: scale(0.6);
+    animation: toLeft 0.75s;
+}
+.toCenter {
     animation-direction: reverse;
-  left:-300px;
-  background-color:orange;
-  transform:scale(1);
-  z-index: 1;
-  }
-  .toOuter {
+    left: -400px;
+    transform: scale(1);
+    z-index: 1;
+}
+.toOuter {
     animation-direction: forwards;
-    background-color:pink;
-    transform:scale(0.6);
+    transform: scale(0.6);
     z-index: 0;
-  }
-  
-  .initialCenter {
-    position:absolute;
-    width:600px;
-  left:-300px;
-  color:red;
-  z-index: 1;
-  }
-  /* .initialRight {
-    color:purple;
-    position:absolute;
-    width:600px;
-  left:300px;
-  transform:scale(0.6);
-  z-index: 0;
-  }
-  .initialLeft {
-  color:green;
-    position:absolute;
-    width:600px;
-  left:-300px;
-  transform:scale(0.6);
-  z-index: 0;
-  } */
+}
 
-  .noAnimation{
-    animation:none;
+.initialCenter {
+    position: absolute;
+    width: 800px;
+    left: -400px;
+    z-index: 1;
+}
+
+.noAnimation {
+    animation: none;
 }

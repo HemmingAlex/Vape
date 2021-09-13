@@ -1,7 +1,7 @@
 .container {
     display: flex;
-    margin:0px 20px 0px 0px;
-    height:250px;
+    margin:0;
+    height:150px;
     /* position:absolute; */
   }
 .quotewrapper {
@@ -12,19 +12,19 @@
 }
 
 .text {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     /* line-height: 150px; */
     background: radial-gradient(
         ellipse at center,
-        #07223f 0%,
-        #07223f 64%,
-        #FF6200 65%,
-        #FF6200 70%,
+        white 0%,
+        white 64%,
+        white 65%,
+        white 70%,
         rgba(210, 20, 20, 0) 72%
     );
-    margin: 0px;
-    color: white;
+    margin: 0;
+    color: #FF6200;
 }
 
 .info{

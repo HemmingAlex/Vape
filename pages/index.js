@@ -49,8 +49,27 @@ export default function Home() {
             </main>
             <br />
             <br />
-          
+          <div style={{display:"flex", justifyContent:"center"}}>
+
             <Carousel />
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
             <footer className={styles.footer}>
                 Vape Influencer Lydon House 10th Floor, Rmy, 62 Hagley Road,
                 Birmingham, United Kingdom, B16 8PE

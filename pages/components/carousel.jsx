@@ -114,7 +114,6 @@ function Carousel() {
                             styles[input.reverse]
                         }`}
                     >
-                        {controller.active}
                         <Info />
                     </div>
                 ))}
