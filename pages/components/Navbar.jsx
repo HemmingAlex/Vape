@@ -8,7 +8,7 @@ function Navbar() {
                     <Image src="/Logo-blue.svg" className={styles.logo} alt="vape Logo" width={500} height={50} />
                     <i className="fa fa-bars"></i>
                     <i className="fa fa-bars"></i>
- <div className={styles.navbar}>
+ <div className={styles.navbar}>???
 <Link href="/about">Abotu Us</Link>
 <Link href="/about">Creators</Link>
 <Link href="/about">How It Works</Link>

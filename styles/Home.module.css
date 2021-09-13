@@ -60,6 +60,7 @@ opacity:0.1;
   padding: 5rem 0;
   flex: 1;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 }
@@ -167,11 +168,25 @@ opacity:0.1;
   height: 1em;
   margin-left: 0.5rem;
 }
+.carousel {
+  display:flex;
+  justify-content: center;
+}
 
-
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  .carousel {display:none}
+
+  .container {
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("/Header_Home_Mobile.jpg");
+    background-size: contain; /* Resize the background image to cover the entire container */
+    background-repeat: no-repeat;
   }
 }

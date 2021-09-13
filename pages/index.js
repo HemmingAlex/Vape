@@ -3,7 +3,7 @@ import Image from "next/image"
 import styles from "../styles/Home.module.css"
 import NavBar from "./components/NavBar"
 // import backgroundImage from "'../public/Header_Home_Desktop.JPG"
-import Carousel from "./components/carousel"
+import Carousel from "./components/Carousel"
 
 export default function Home() {
    
@@ -49,8 +49,9 @@ export default function Home() {
             </main>
             <br />
             <br />
-          <div style={{display:"flex", justifyContent:"center"}}>
-
+          <div
+          className={styles.carousel}
+          >
             <Carousel />
           </div>
           <br />
