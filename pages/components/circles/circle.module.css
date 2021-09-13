@@ -45,14 +45,15 @@
     text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
 }
 
-@media (min-width: 850px) {
-    .quotewrapper {
-        width: 370px;
-        height: 370px;
-    }
-    .text p {
-        font-size: 26px;
-    }
+@media (max-width: 800px) {
+    .text {
+      height:150px;
+      width:150px;
+      }
+
+ .container{
+   margin:0 auto;
+   justify-content:center;
+ }
+
 }
-
-
