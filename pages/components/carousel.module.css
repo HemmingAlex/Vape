@@ -1,0 +1,106 @@
+.carousel {
+    max-width: 800px;
+    background-color: #07223f;
+    color: white;
+    height: 393px;
+    margin: 30px auto;
+}
+
+.orange {
+    display:inline;
+    color:#FF6200;
+}
+
+.title,
+.description {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.description {
+    font-style: 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+.left {
+    max-width: 45%;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.right {
+    width: 50%;
+    z-index: 20;
+}
+
+.modelInfo {
+    font-size: 10px;
+    display: flex;
+}
+
+/* //carousel effect */
+
+@keyframes toLeft {
+    from {
+        left: -400px;
+        transform: scale(1);
+    }
+    to {
+        left: -800px;
+        transform: scale(0.6);
+    }
+}
+
+@keyframes toRight {
+    from {
+        left: -400px;
+        transform: scale(1);
+    }
+    to {
+        left: 0px;
+        transform: scale(0.6);
+    }
+}
+
+.toRight {
+    position: absolute;
+    width: 800px;
+    left: 0px;
+    transform: scale(0.6);
+    animation: toRight 0.75s;
+}
+
+.toLeft {
+    position: absolute;
+    width: 800px;
+    left: -800px;
+    transform: scale(0.6);
+    animation: toLeft 0.75s;
+}
+.toCenter {
+    animation-direction: reverse;
+    left: -400px;
+    transform: scale(1);
+    z-index: 1;
+}
+.toOuter {
+    animation-direction: forwards;
+    transform: scale(0.6);
+    z-index: 0;
+}
+
+.initialCenter {
+    position: absolute;
+    width: 800px;
+    left: -400px;
+    z-index: 1;
+}
+
+.noAnimation {
+    animation: none;
+}
