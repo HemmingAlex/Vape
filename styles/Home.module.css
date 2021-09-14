@@ -235,5 +235,9 @@
   .container,.main,.footer  {
     width:100vw;
   }
+  .footer {
+    padding:5px;
+    font-size: 10px;
+  }
 
 }
