@@ -107,24 +107,6 @@
   color: white;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #07223f;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
 .title {
   margin: 0;
   line-height: 1.15;
@@ -171,29 +153,12 @@
   width: 45%;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
 .logo {
   height: 1em;
   margin-left: 0.5rem;
 }
 .carousel {
+  height:600px;
   display: flex;
   justify-content: center;
   margin: 0;
@@ -257,5 +222,13 @@
   }
   .buttons .enrole {
     width: 137px;
+  }
+  .buttons .moreInfo {
+    width: 137px;
+  }
+
+  .carousel {
+    width:100vw;
+    overflow: hidden;
   }
 }

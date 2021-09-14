@@ -43,7 +43,7 @@
 .whiteLogo {
   display: none;
 }
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .navbar a:not(:first-child) {
     display: none;
   }
@@ -51,7 +51,7 @@
     float: right;
     display: block;
   }
-}
+} */
 
 @media screen and (max-width: 800px) {
   .bars {
