@@ -142,7 +142,7 @@
 }
 @media (max-width: 800px) {
   .carousel {
-    width: 81.13vw;
+    /* width: 81.13vw; */
     background-color: #07223f;
     color: white;
     margin: 0;
@@ -154,7 +154,7 @@
     margin: auto;
     display: flex;
     justify-content: center;
-    width: 81.13vw;
+    width: 100vw;
     padding: 0;
   }
 
@@ -167,17 +167,16 @@
   .description {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 20px auto;
   }
   .title {
-    font-size: 27px;
-    padding-top: 15px;
+    font-size: 19px;
+    padding: 15px;
   }
 
   .description {
     font-style: 14px;
     text-align: center;
-    margin: 2px;
   }
 
   .left {
@@ -207,12 +206,12 @@
 
   @keyframes toLeft {
     from {
-      left: -167px;
+      left: -184px;
       transform: scale(1);
       opacity: 1;
     }
     to {
-      left: -230px;
+      left: -251px;
       transform: scale(0.9);
       opacity: 0.75;
     }
@@ -220,7 +219,7 @@
 
   @keyframes toRight {
     from {
-      left: -184px;
+      left: -251px;
       transform: scale(1);
       opacity: 1;
     }
@@ -243,7 +242,7 @@
   .toLeft {
     position: absolute;
     width: 334px;
-    left: -217px;
+    left: -251px;
     transform: scale(0.9);
     animation: toLeft 0.75s;
     opacity: 0.75;
