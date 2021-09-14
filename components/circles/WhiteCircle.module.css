@@ -2,6 +2,7 @@
   display: flex;
   margin: 0;
   height: 150px;
+  position:relative;
 }
 .quotewrapper {
   max-width: 150px;
@@ -25,10 +26,13 @@
 }
 
 .info {
+  position: absolute;
   width: 140px;
   display: flex;
   margin-left: 30px;
   align-items: center;
+  top:0px;
+  right:20px;
 }
 .text {
   line-height: 1.25;
@@ -46,9 +50,11 @@
     width: 80px;
   }
   .info {
-    margin-left: 10px;
     font-size: 9px;
-    text-align: center;
     opacity: 0.75;
+    text-align: center;
+    right:-38px;
+    top:25px;
+    width: 70px;
   }
 }
